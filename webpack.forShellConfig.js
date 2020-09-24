@@ -1,6 +1,5 @@
 const webpackMerge = require('webpack-merge');
 const singleSpaDefaults = require('webpack-config-single-spa-react-ts');
-// const webpackBaseConfig = require('./webpack.config');
 const { getAppConfig } = require('./app-config');
 
 const { projectName } = getAppConfig();

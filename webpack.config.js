@@ -3,8 +3,6 @@ const dotenv = require('dotenv');
 const webpack = require('webpack');
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const { getAppConfig } = require('./app-config');
 
 const appConfig = getAppConfig();
@@ -52,11 +50,6 @@ const commonWebpack = () => {
     },
   };
 };
-
-const htmlWebpackPlugin = gpnWebpack.plugins.find((plugin) => plugin instanceof HtmlWebpackPlugin);
-htmlWebpackPlugin.options.custom = `<script>window.appConfig = ${JSON.stringify(
-  appConfig,
-)}</script>`;
 
 module.exports = merge(commonWebpack(), gpnWebpack, {
   output: {
