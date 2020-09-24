@@ -12,7 +12,7 @@ const appConfig = getAppConfig();
 const gpnWebpack = require('@gpn-prototypes/frontend-configs/webpack.config')({
   appConfig,
   // eslint-disable-next-line global-require
-  postCssConfig: require('./postcss.config'),
+  postCssConfig: { postcssOptions: { ...require('./postcss.config') } },
 });
 
 const commonWebpack = () => {
@@ -58,7 +58,7 @@ htmlWebpackPlugin.options.custom = `<script>window.appConfig = ${JSON.stringify(
   appConfig,
 )}</script>`;
 
-module.exports = merge.smart(commonWebpack(), gpnWebpack, {
+module.exports = merge(commonWebpack(), gpnWebpack, {
   output: {
     publicPath: '/',
   },

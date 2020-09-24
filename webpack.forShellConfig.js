@@ -1,6 +1,6 @@
 const webpackMerge = require('webpack-merge');
 const singleSpaDefaults = require('webpack-config-single-spa-react-ts');
-const webpackBaseConfig = require('./webpack.config');
+// const webpackBaseConfig = require('./webpack.config');
 const { getAppConfig } = require('./app-config');
 
 const { projectName } = getAppConfig();
@@ -16,7 +16,24 @@ module.exports = (webpackConfigEnv) => {
     // modify the webpack config however you'd like to by adding to this object
     entry: ['./src/singleSpaEntry.tsx'],
     module: {
-      rules: webpackBaseConfig.module.rules,
+      rules: [
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+            },
+          ],
+        },
+        {
+          test: /\.css$/,
+          use: [
+            {
+              loader: 'postcss-loader',
+            },
+          ],
+        },
+      ],
     },
   });
 };
