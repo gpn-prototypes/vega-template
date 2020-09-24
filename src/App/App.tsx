@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Root } from '@gpn-prototypes/vega-ui';
 
-import { AppConfig } from '../app-config';
+import { AppConfig } from '../../app-config';
 
 import './App.css';
 

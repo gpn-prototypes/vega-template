@@ -58,7 +58,7 @@ htmlWebpackPlugin.options.custom = `<script>window.appConfig = ${JSON.stringify(
   appConfig,
 )}</script>`;
 
-module.exports = merge(commonWebpack(), gpnWebpack, {
+module.exports = merge.smart(commonWebpack(), gpnWebpack, {
   output: {
     publicPath: '/',
   },
