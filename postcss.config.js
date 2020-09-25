@@ -2,6 +2,5 @@ const createPostcssConfig = require('@gpn-prototypes/frontend-configs/postcss.co
 
 module.exports = {
   // eslint-disable-next-line global-require
-  ...require('@gpn-prototypes/frontend-configs/postcss.config'),
   plugins: [...createPostcssConfig().plugins],
 };
