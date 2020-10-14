@@ -27,10 +27,10 @@
 
 ## Деплой
 
-В файлах `.github/kuberta.yaml` и `.github/workflows/build-static.yml` необходимо расскоментировать конфиги,
+В файлах `.github/kuberta.yaml` и `.github/workflows/build-static.yml` необходимо раскоментировать конфиги,
 и заменить вхождения `vega-template` на `vega-${projectName}`
 
-В файле `.github/kuberta.yaml` указать соответсвующее название проекта в поле `name`
+В файле `.github/kuberta.yaml` нужно указать соответсвующее название проекта в поле `name`
 
 В файле `app-config/index.js` нужно указать соответсвующий `projectName`.
 
