@@ -24,3 +24,14 @@
 Для сборки проекта в prod-режиме выполните `yarn build`.
 
 В проекте создана основа для написания unit-тестов. Переменные окружения можно добавить через файл .env.
+
+## Деплой
+
+В файлах `.github/kuberta.yaml` и `.github/workflows/build-static.yml` необходимо раскоментировать конфиги,
+и заменить вхождения `vega-template` на `vega-${projectName}`
+
+В файле `.github/kuberta.yaml` нужно указать соответсвующее название проекта в поле `name`
+
+В файле `app-config/index.js` нужно указать соответсвующий `projectName`.
+
+В настройках репозитория добавить секреты (узнать у CSSSR): `CDN_UPLOAD_SECRET` и `DOWNLOAD_ACTIONS_SSH_KEY`.
